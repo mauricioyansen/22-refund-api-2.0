@@ -16,3 +16,9 @@ refundsRoutes.get(
   verifyUserAuthorization(["manager"]),
   refundsController.get
 );
+
+refundsRoutes.get(
+  "/:id",
+  verifyUserAuthorization(["manager", "employee"]),
+  refundsController.getRefundById
+);
